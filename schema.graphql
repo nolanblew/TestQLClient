@@ -1,0 +1,20 @@
+﻿schema {
+  query: Query
+}
+
+type Query {
+  GetByUsername(username: String!): User
+}
+
+type User {
+  id: ID!
+  username: String!
+  name: String!
+  loginAttempts(first: Int!): [LoginAttempt!]!
+}
+
+type LoginAttempt {
+  id: ID!
+  time: String!
+  success: Boolean!
+}
